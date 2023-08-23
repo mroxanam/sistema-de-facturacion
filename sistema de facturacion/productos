@@ -1,0 +1,21 @@
+class Productos
+{
+  id int;
+  string nombre;
+  doble precio;
+}
+
+class Ventas
+{
+  int id;
+  date fecha;
+  producto producto;
+  double total;
+}
+
+class Cliente
+{ 
+  id int;
+  string nombre;
+  string direccion;
+}
