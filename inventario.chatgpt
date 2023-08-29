@@ -1,0 +1,18 @@
++------------------+
+| SistemaInventarios|
++------------------+
+| -productos: Producto[]
+| -existencias: int[]
++------------------+
+| +registradorIngreso()
+| +registradorEgreso()
+| +generarReporte()
++------------------+
+
++------------------+
+| Producto |
++------------------+
+| -id: int
+| -nombre: Cadena
+| -precio: doble
++------------------+

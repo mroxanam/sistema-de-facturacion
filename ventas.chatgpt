@@ -1,0 +1,37 @@
++------------------+
+| SistemaVenta |
++------------------+
+| -clientes: Cliente[]
+| -productos: Producto[]
+| -ventas: Venta[]
++------------------+
+| +registradorVenta()
+| +generarReporte()
++------------------+
+
++------------------+
+| Cliente |
++------------------+
+| -id: int
+| -nombre: Cadena
+| -direccion: Cadena
++------------------+
+| +realizarCompra()
++-----------------+
+
++------------------+
+| Producto |
++------------------+
+| -id: int
+| -nombre: Cadena
+| -precio: doble
++------------------+
+
++------------------+
+| Venta |
++------------------+
+| -id: int
+| -fecha: Fecha
+| -productos: Producto[]
+| -total: doble
++------------------+

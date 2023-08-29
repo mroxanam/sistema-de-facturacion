@@ -1,0 +1,27 @@
++------------------+
+| SistemaCobranza |
++------------------+
+| -clientes: Cliente[]
+| -facturas: Factura[]
++------------------+
+| +registradorPago()
+| +generarReporte()
++------------------+
+
++------------------+
+| Cliente |
++------------------+
+| -id: int
+| -nombre: Cadena
+| -deuda: doble
++------------------+
+| +realizarPago()
++------------------+
+
++------------------+
+| Factura |
++------------------+
+| -id: int
+| -fecha: Fecha
+| -monto: doble
++------------------+
