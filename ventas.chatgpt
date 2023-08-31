@@ -1,37 +1,47 @@
-+------------------+
-| SistemaVenta |
-+------------------+
-| -clientes: Cliente[]
-| -productos: Producto[]
-| -ventas: Venta[]
-+------------------+
-| +registradorVenta()
-| +generarReporte()
-+------------------+
+-----------------------
+|     SistemaVentas   |
+-----------------------
+| - productos: Producto[] |
+| - clientes: Cliente[]   |
+| - ventas: Venta[]       |
+-----------------------
 
-+------------------+
-| Cliente |
-+------------------+
-| -id: int
-| -nombre: Cadena
-| -direccion: Cadena
-+------------------+
-| +realizarCompra()
-+-----------------+
+           |
+           |
+           v
 
-+------------------+
-| Producto |
-+------------------+
-| -id: int
-| -nombre: Cadena
-| -precio: doble
-+------------------+
+---------------------
+|      Producto     |
+---------------------
+| - nombre: string  |
+| - precio: float   |
+| - stock: int      |
+---------------------
 
-+------------------+
-| Venta |
-+------------------+
-| -id: int
-| -fecha: Fecha
-| -productos: Producto[]
-| -total: doble
-+------------------+
+           |
+           |
+           v
+
+---------------------
+|      Cliente      |
+---------------------
+| - nombre: string  |
+| - direccion: string|
+| - telefono: string|
+---------------------
+
+           |
+           |
+           v
+
+---------------------
+|       Venta       |
+---------------------
+| - fecha: Fecha    |
+| - cliente: Cliente|
+| - productos: Producto[]|
+| - total: float    |
+---------------------
+
+
+

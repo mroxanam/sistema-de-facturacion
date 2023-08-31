@@ -1,9 +1,9 @@
 -----------------------
-|    SistemaInventario |
+|     SistemaPagos   |
 -----------------------
-| - productos: Producto[] |
-| - proveedores: Proveedor[] |
-| - movimientos: MovimientoInventario[] |
+| - clientes: Cliente[]|
+| - facturas: Factura[]|
+| - transacciones: Transaccion[]|
 -----------------------
 
            |
@@ -11,23 +11,10 @@
            v
 
 ---------------------
-|      Producto     |
+|      Cliente      |
 ---------------------
 | - nombre: string  |
-| - cantidad: int   |
-| - precio: float   |
-| - proveedor: Proveedor |
----------------------
-
-           |
-           |
-           v
-
----------------------
-|    Proveedor      |
----------------------
-| - nombre: string  |
-| - contacto: string|
+| - direccion: string|
 | - telefono: string|
 ---------------------
 
@@ -35,11 +22,23 @@
            |
            v
 
+---------------------
+|      Factura      |
+---------------------
+| - fecha: Fecha    |
+| - cliente: Cliente|
+| - total: float    |
+---------------------
+
+           |
+           |
+           v
+
 -------------------------------
-|   MovimientoInventario      |
+|      Transaccion             |
 -------------------------------
 | - fecha: Fecha             |
-| - tipo: TipoMovimiento     |
-| - producto: Producto       |
-| - cantidad: int            |
+| - factura: Factura        |
+| - tipo: TipoTransaccion   |
+| - monto: float            |
 -------------------------------

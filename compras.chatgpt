@@ -1,27 +1,19 @@
-+------------------+
-| SistemaCompras |
-+------------------+
-| -proveedores: Proveedor[]
-| -productos: Producto[]
-| -compras: Compra[]
-+------------------+
-| +registradorCompra()
-| +generarReporte()
-+------------------+
+----------------------
+|    SistemaCompras   |
+----------------------
+| - compras: Compra[] |
+----------------------
 
-+------------------+
-| Proveedor |
-+------------------+
-| -id: int
-| -nombre: Cadena
-| -contacto: Cadena
-+------------------+
+           |
+           |
+           v
 
-+------------------+
-| Compra |
-+------------------+
-| -id: int
-| -fecha: Fecha
-| -productos: Producto[]
-| -total: doble
-+------------------+
+---------------------
+|       Compra      |
+---------------------
+| - fecha: string   |
+| - proveedor: string|
+| - productos: string|
+| - total: string    |
+---------------------
+
