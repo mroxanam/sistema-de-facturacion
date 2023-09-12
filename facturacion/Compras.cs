@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace facturacion
+{
+   
+    public class Compras
+    {
+        // Compras Attributes
+        private string fecha;
+        private string proveedor;
+        private string productos;
+        private string total;
+        // CONSTRUCTOR
+        public Compras(string aFecha, string aProveedor, string aProductos, string aTotal)
+        {
+            fecha = aFecha;
+            proveedor = aProveedor;
+            productos = aProductos;
+            total = aTotal;
+        }
+        // Properties
+        public string Fecha
+        {
+            get { return fecha; }
+            set { fecha = value; }
+        }
+        public string Proveedor
+        {
+            get { return proveedor; }
+            set { proveedor = value; }
+        }
+        public string Productos
+        {
+            get { return productos; }
+            set { productos = value; }
+        }
+        public string Total
+        {
+            get { return total; }
+            set { total = value; }
+        }
+        public override string ToString()
+        {
+            return base.ToString() + "[" +
+            "fecha" + ":" + Fecha + "," +
+            "proveedor" + ":" + Proveedor + "," +
+            "productos" + ":" + Productos + "," +
+            "total" + ":" + Total + "]";
+        }
+    }
+}
