@@ -1,0 +1,774 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="scripts/_load.js" type="text/javascript"></script>
+    <title>UmpleOnline: Generate Java, C++, PHP, Alloy, NuSMV or Ruby code from Umple</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
+  <style>
+  .button2 {
+   border-top: 1px solid #d3bc8f;
+   line-height: 1.6;
+   background: #d8a695;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e5bcae), to(#d8a695));
+   background: -webkit-linear-gradient(top, #e5bcae, #d8a695);
+   background: -moz-linear-gradient(top, #e5bcae, #d8a695);
+   background: -ms-linear-gradient(top, #e5bcae, #d8a695);
+   background: -o-linear-gradient(top, #e5bcae, #d8a695);
+   padding: 2px 5px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button2:hover {
+   border-top-color: #810b09;
+   background: #810b09;
+   color: #ccc;
+   }
+.active {
+  background: #B06C5B;
+}
+</style>
+<link rel="stylesheet" href="scripts/styleSurvey.css"> 
+<link rel="apple-touch-icon" sizes="57x57" href="https://cruise.umple.org/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://cruise.umple.org/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://cruise.umple.org/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://cruise.umple.org/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://cruise.umple.org/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://cruise.umple.org/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://cruise.umple.org/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://cruise.umple.org/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://cruise.umple.org/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://cruise.umple.org/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cruise.umple.org/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://cruise.umple.org/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cruise.umple.org/favicon-16x16.png">
+<link rel="manifest" href="https://cruise.umple.org/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://cruise.umple.org/ms-icon-144x144.png">
+<meta name="theme-color" content="#8f001a">
+</head>
+<body>
+   
+    <div id="header" class="row">
+        <span style="float: right">
+          <a href="https://www.uottawa.ca" target="uottawatab"><img height="33px" src="scripts/uottawa_ver_black.png" alt="University of Ottawa logo / Université d'Ottawa" /></a>        
+        </span>       
+      <div class="inRow logo">
+        <a href="https://cruise.umple.org/umple"><img src="scripts/umpleonline_title.jpg" alt="UmpleOnline logo" /></a>     
+      </div>
+      <div class="inRow">
+        <p class="pagedescription">
+        
+        <span class="pretext">
+          Draw on the right, write (Umple) model code on the left. Analyse models and generate code.<br/>
+                           <script> // pass JSON file and rolled number to js
+                  window.randomSurveyRoll = 1;
+                  window.surveyData = {"InvitationalMessage":"<span style='font-size: 150%; background-color: yellow;'> Please click here to answer a quick user experience survey in a separate tab. It will help improve Umple.<\/span>","RecruitmentText":"<p>We would appreciate it if you could take 10 minutes to give us some feedback about your experience while using UmpleOnline.<\/p><p>Your answers will help us evaluate the usability of the system and ultimately improve it. The project title is: 'Flow Experience in a Software Modeling Tool: Umple'<\/p><p>The survey is being conducted by Reyhaneh Kalantari, a Ph.D. student at the University of Ottawa, as part of her thesis work. You have been randomly selected to participate from among those working with UmpleOnline.<br\/>No data gathered will result in you being identifiable, and your responses will remain confidential. There are no known risks to participating in the survey.<\/p><p>If you have any questions about this study, please contact the investigator at <a href='mailto:Reyhaneh.Kalantari@uottawa.ca' target='mailoriginator'>Reyhaneh.Kalantari@uottawa.ca<\/a><\/p>","EditsBeforePrompt":10,"MinutesBeforePrompt":5,"RandomizedFrequency":1,"SurveyURL":"https:\/\/www.surveymonkey.ca\/r\/UmpleOLSummer2021"};
+                </script>
+                <span id="mainSurveySpan">
+                  <script src="scripts/umple_survey.js"></script>
+                </span>
+                        </span>
+        <span id="gdprtext" class="pretext">        
+          This tool stores your data in cookies and on a server. <a href="javascript:Action.hidegdpr()">I understand</a>. &nbsp; <a href="http://privacy.umple.org" target="privacy">Click to learn about privacy.</a>
+        <br/></span>
+    
+    <span style="font-size: 30%; white-space:nowrap;">
+    <a class="button2" style="padding-top:auto; padding-bottom: auto;" href="http://dl.umple.org" target="dlpage" title="Go to the page that gives instructions on how to download Umple for use in Docker, or Eclipse or on the command line">Download</a>&nbsp;
+    <a class="button2" style="padding-top:auto; padding-bottom: auto;" href="https://alumni.uottawa.ca/donation-form?fid=bp71rD2pbt0%3d&fdesc=vj8yiR3kw2%2bPwQCmy1Z8CfKc0F1zufF0wBCY%2fxboCy4%2bHJZne7BoLhQuKHwuRN4R5bhBEciI1Gn5RbPGt1TgEQ%3d%3d" target="donatepage" title="Go to a University of Ottawa page that will enable you to donate to support Umple; even a few dollars will be much appreciated">Donate</a>&nbsp;
+    
+    </span>&nbsp; &nbsp;
+          For help:
+                    
+    <span style="font-size: 30%; white-space:nowrap;">
+    <a class="button2" style="line-height: 1; padding-top:auto; padding-bottom: auto;" href="http://manual.umple.org" target="helppage" title="Open the Umple user manual in a separate tab" >User manual</a>&nbsp;
+    <a class="button2" style="line-height: 1; padding-top:auto; padding-bottom: auto;" href="http://questions.umple.org"
+       target="questionpage" title="Open a separate tab on the StackOverflow page where you can ask Umple community members questions">Ask questions</a>&nbsp;
+    <a class="button2" style="line-height: 1; padding-top:auto; padding-bottom: auto;" href="https://github.com/umple/umple/issues/new" target="issuepage" title="Open a separate tab on the page where you can report an Umple bug or request an improvement">Report issue</a>&nbsp;
+    </span>
+        </p>
+      </div>
+    </div>
+  
+  <noscript>
+    <br/><font color="red">JavaScript is disabled so the dynamic features of this page will not work. To use UmpleOnline, turn Javascript on. Otherwise you can download the command-line Umple compiler or use Eclipse.</font>
+        <pre>
+      
+class Cliente {
+  id;
+  nombre;
+  direccion;
+  telefono;
+}
+
+class Proveedor {
+  id;
+  nombre;
+  direccion;
+  telefono;
+}
+
+class Producto {
+  id;
+  nombre;
+  precio;
+  idProveedor;
+}
+
+class Articulo {
+  id;
+  cantidad;
+  precio;
+}
+
+class Compra {
+  id;
+  total;
+  formaPago;
+  estado;
+  fecha;
+  Cliente cliente;
+  Articulo articulo;
+  Proveedor proveedor;
+}
+
+class Venta {
+  id;
+  total;
+  formaPago;
+  estado;
+  fecha;
+  Cliente cliente;
+  Articulo articulo;
+}
+//$?[End_of_model]$?
+
+namespace -;
+
+class Cliente
+{
+  position 50 30 109 45;
+}
+
+class Proveedor
+{
+  position 50 130 109 45;
+}
+
+class Producto
+{
+  position 50 230 109 45;
+}
+
+class Articulo
+{
+  position 50 330 109 45;
+}
+
+class Compra
+{
+  position 50 430 109 45;
+}
+
+class Venta
+{
+  position 250 30 109 45;
+}    </pre>
+  </noscript> 
+      
+  <input id="filename" type="hidden" value="../ump/2309251uktcrhsgl9kt/model.ump" />
+  <input id="advancedMode" type="hidden" value="0" />
+  <input id="model" type="hidden" value="2309251uktcrhsgl9kt" />
+
+  <div id="taskArea" style="display: none;">
+    
+      <table>
+        <tr style="text-align:left;">
+          <th id="labelTaskName" style="display: none;"><label for="taskName"><span style="color:red">&#42;</span>Task Name:</label></th>
+          <th><label id="labelRequestorName" for="requestorName">Requestor Name:</label></th>
+          <th id="labelCompletionURL"><label>Completion Survey URL:</label></th>
+        </tr>
+        <tr>
+          <th id="taskNameCell" style="display: none;" title="This name should describe the experiment or course assignment.
+            It can contain alphanumeric characters as well as _ and .
+            It is case sensitive. Responders will be able to use this
+            to look up the task from the 'Load a task' menu item"><input type="text" id="taskName" name="fname"></th>
+          <th title="This is optional. It will help reassure responders that they
+            are responding to the correct task for the correct person
+            or organization."><input type="text" id="requestorName"></th>
+          <th id="completionURLCell" title="This is optional. Upon submitting a task, UmpleOnline will
+            take responders to this URL with two arguments: task: the task name
+            url: the URL of the completed task (with the model read-only)
+            Requestors can use this to gather responses and/or
+            to ask survey questions about the experiment or assignment"><input type="text" id="completionURL" width="70ch"></th>
+          <th id="isExperimentCell" style="display: none; "title=" Check this to initiate logging of every command the user does.
+            You should have ethics committee approval if you wish to use this
+            and publish the results. Also, you should
+            When you download the task you will be able to analyse the
+            complete evolution of the model as the user works on it."><input id="isExperiment" type="checkbox" value="isExperiment"><label>isExperiment</label></th>
+        </tr>
+      </table>
+     
+    
+      <b><label id="labelInstructions" for="instructions">Task Instructions:</label></b>
+      <div id="instructionsHTML"></div>
+      <textarea id="instructions" style="display: none;" title="Write task instructions in Markdown format.
+        Lines starting with # are headings
+        Lines starting with * are bullet points
+        URLs will become links that take a user to another tab
+        (You can use such URLs to tell users where to find more information
+        about the task)
+        The instructions might be requirements you want responders to
+        implement. You can also create a complete model in the main
+        area and then ask for reponders to make changes.
+        If you need to be able to identify the responders you should
+        ask them to include their name and/or ID in a comment
+        in their model."></textarea>
+
+    <div style="margin-top: 5px;">
+          <a class="button2" href="javascript:Page.createTask()" title="Click this to submit the task.
+        After you click you will be taken to a page to edit the task
+        You must bookmark that page so you can edit the task repeatedly.
+        ">Submit Task</a> 
+        <a class = "button2" href = "javascript: Page.cancelTask()" title= "Click this to discard your task" style = "margin-left: 5px" id = "buttonCancelTask">Cancel Task</a>
+        </div>
+
+    <span id="buttonCopyParticipantURL">
+      
+    </span>
+    <br>
+  </div>
+
+
+  <div id="topLine" class="bookmarkableUrl">
+    <span id="linetext">Line=<input size=2 id="linenum" value=1 onChange="Action.setCaretPosition(value);"></input>&nbsp; &nbsp;</span>   
+  
+    <span style="font-size: 30%">
+    <a id="ECD_button" class="button2 active" href="javascript:Page.clickShowEditableClassDiagram()">E</a>&nbsp;
+    <a id="GCD_button" class="button2" href="javascript:Page.clickShowGvClassDiagram()">G</a>&nbsp;
+    <a id="SD_button" class="button2" href="javascript:Page.clickShowGvStateDiagram()">S</a>&nbsp;
+    </span>
+ 
+    &nbsp; 
+    <span style="font-size: 30%">
+    <a id="SHT_button" class="button2 active" href="javascript:Page.clickShowHideText()">T</a>&nbsp;
+    <a id="SHD_button" class="button2 active" href="javascript:Page.clickShowHideCanvas()">D</a>&nbsp;
+    </span>
+    
+    &nbsp; 
+    <span style="font-size: 30%">
+    <a id="SHA_button" class="button2 active" href="javascript:Page.clickToggleAttributes()">A</a>&nbsp;
+    <a id="SHM_button" class="button2" href="javascript:Page.clickToggleMethods()">M</a>&nbsp;
+    </span>
+
+
+    &nbsp; 
+    <span style="font-size: 30%; white-space:nowrap;">
+    <a class="button2" href="javascript:Action.generateCode('java','Java');"
+      title="Generate Java from this Umple model ... To generate other outputs such as C++, PhP, ER Diagrams and Formal Methods, use the Generate menu in Tools">Generate Java</a>&nbsp;
+    </span>    
+  
+    <span style="font-size: 30%; white-space:nowrap;">  
+          <a class="button2" id="topBookmarkable" href="umple.php?model=2309251uktcrhsgl9kt">Changes at this URL are saved</a>
+    
+    </span>
+
+    <span style="font-size: 30%; white-space:nowrap;">  
+    <a id="toggleTabsButton" class="button2" href="javascript:Page.toggleTabs()" title="Hide tabs to add a little extra vertical space if you are not going to edit multiple files; click again to show the tabs.">Hide Tabs</a>
+    </span>
+    
+    <span id="restorecode" >&nbsp; &nbsp; <a href="#"> Restore Saved State</a></span>
+
+    &nbsp; &nbsp;<span id=exampleMessage></span> <span id=feedbackMessage></span>
+  </div>
+
+  <div id="tabControl">
+    <ul id="tabs" class="tabrow">
+      
+        <li id="createTabBtn" class="unsortable"><a href="javascript:TabControl.createTab('afterTabControlInit');">+</a></li>
+      
+    </ul>
+  </div>
+
+  <div id="mainApplication" class="row"> 
+    <div id="textEditorColumn"  tabIndex="2"  class="inRow"> 
+      <div id="topTextEditor">
+        <textarea id="umpleModelEditorText" class="umpleModelEditor" wrap="off"></textarea>
+      </div>
+      <div id="bottomTextEditor">
+        <textarea id="umpleLayoutEditorText" class="umpleLayoutEditor" wrap="off"></textarea>
+      </div>
+    </div>
+    
+    <div id="paletteColumn" class="inRow" ondrop="Action.dropHandler(event);" ondragover="Action.dragOverHandler(event);">
+      <div id="palette" class="palette">
+
+        <!-- GROUP 1 OF OPTIONS -->
+        <h3><a href="#saveload">SAVE & LOAD</a></h3>
+        
+        <div class="section">
+          <ul class="first" id="saveLoad">
+            <li class="subtitle">SAVE</li>
+                        <!--li id="ttSaveBookmark">
+              <div id="menuBookmarkable" class="bookmarkableUrl">
+                <a href="umple.php?model=2309251uktcrhsgl9kt">Resave URL</a>
+              </div>
+            </li-->
+                        <li id="buttonCopyClip" class="copyClip">
+              <img src="scripts/copy.png"/> 
+               Copy to Clipboard
+            </li>           
+            <li id="buttonCopy" class="copy">
+              <img src="scripts/copy.png"/> 
+               Source to Copy
+            </li>
+            <li id="buttonCopyEncodedURL" class="copyEncoded">
+              <img src="scripts/copy.png"/> 
+              Encoded URL
+            </li>
+            <li id="buttonCopyCommandLine" class="copyCommandLine">
+              <img src="scripts/copy.png"/> 
+              Command Script
+            </li>
+            <li id="buttonCopyLocalBrowser" class="copyLocalBrowser">
+              <img src="scripts/copy.png"/> 
+              Store in Browser
+            </li>
+            
+            <!--li id="buttonLoadLocalBrowser" class="loadLocalBrowser">
+              <img src="scripts/copy.png"/> 
+              Load from Browser
+            </li-->
+
+            <li id="buttonDownloadFiles" class="downloadFiles">
+              <img src="scripts/copy.png"/> 
+               Download Files
+            <li class="subtitle">LOAD</li>
+            <li id="buttonLoadLocalBrowser" class="loadLocalBrowser">
+              <img src="scripts/copy.png"/> 
+              Load from Browser
+            </li>
+            <li>Drag and drop a .ump file here to load it, or drag it to any place in the text area.</li>
+          </ul>
+
+          <ul class="second center-children">
+            <li class="subtitle">RESET</li>
+            <li id="ttLoadBlankModel">
+              <div id="buttonLoadBlankModel" class="jQuery-palette-button" value="Load Blank Model"></div>
+            </li>
+            <li id="ttShowRefreshUmpleCompletely">
+            	<div id="buttonShowRefreshUmpleOnlineCompletely" class="jQuery-palette-button" value="Reset Completely"></div>
+            </li>
+            <li id="ttStartOver"> 
+              <div id="buttonStartOver" style="display: none;" value="Click here to completely refresh UmpleOnline (cannot be undone)"></div> 
+            </li>
+            
+          </ul>
+        </div>
+        
+        <!-- GROUP 2 OF OPTIONS -->
+        <h3><a href="#tools">TOOLS</a></h3>
+        
+        <div class="section">
+                    <ul id="mainLoadMenu" class="first center-children">
+            <li class="subtitle"> Examples </li>
+            <li id="exampleType">
+              <select id="inputExampleType" name="inputExampleType" class="button" size = "1">
+                <option name = "optionExampleType" id = "cdModels" value="cdModels">Class Diagrams</option>
+                <option name = "optionExampleType" id = "smModels" value="smModels">State Machines</option>
+                <option name = "optionExampleType" id = "structureModels" value="structureModels">Composite Structure</option>
+                <option name = "optionExampleType" id = "featureModels" value="featureModels">Feature Diagram</option>
+              </select>
+            </li>
+            <li id="itemLoadExamples">
+              <select id="inputExample" name="inputExample" class="button" size = "1" data-diagram-type="class">
+                <option name = "optionExample" id = "defaultExampleOption" value="">Select Example</option>
+                <option name = "optionExample" value="2DShapes.ump">2DShapes *</option>
+                <option name = "optionExample" value="AccessControl.ump">Access Control</option>
+                <option name = "optionExample" value="AccessControl2.ump">Access Control 2</option>
+                <option name = "optionExample" value="Accidents.ump">Accidents</option>
+                <option name = "optionExample" value="Accommodations.ump">Accommodations</option>
+                <option name = "optionExample" value="AfghanRainDesign.ump">Afghan Rain Design</option>
+                <option name = "optionExample" value="AirlineExample.ump">Airline *</option>
+                <option name = "optionExample" value="BankingSystemA.ump">Banking System A</option>
+                <option name = "optionExample" value="BankingSystemB.ump">Banking System B</option>
+                <option name = "optionExample" value="CanalSystem.ump">Canal</option>
+                <option name = "optionExample" value="Decisions.ump">Decisions</option>
+                <option name = "optionExample" value="OhHellWhist.ump">Card Games</option>
+                <option name = "optionExample" value="Claim.ump">Claim (Insurance)</option>
+                <option name = "optionExample" value="CommunityAssociation.ump">Community Association</option>
+                <option name = "optionExample" value="Compositions.ump">Compositions</option>
+                <option name = "optionExample" value="CoOpSystem.ump">Co-Op System</option>
+                <option name = "optionExample" value="DMMOverview.ump">DMM Overview</option>
+                <option name = "optionExample" value="GeometricSystem.ump">Geometric system</option>
+                <!-- <option name = "optionExample" value="DMMModelElementHierarchy.ump">DMM Model Element Hierarchy</option> -->
+                <option name = "optionExample" value="DMMSourceObjectHierarchy.ump">DMM Source Object Hierarchy</option>
+                <option name = "optionExample" value="DMMRelationshipHierarchy.ump">DMM Relationship Hierarchy</option>
+                <option name = "optionExample" value="DMMExtensionCTF.ump">DMM CTF</option>
+                <option name = "optionExample" value="ElectionSystem.ump">Election System</option>
+                <option name = "optionExample" value="ElevatorSystemA.ump">Elevator System A</option>
+                <option name = "optionExample" value="ElevatorSystemB.ump">Elevator System B</option>
+                <option name = "optionExample" value="GenealogyA.ump">Genealogy A</option>
+                <option name = "optionExample" value="GenealogyB.ump">Genealogy B</option>
+                <option name = "optionExample" value="GenealogyC.ump">Genealogy C</option>
+                <option name = "optionExample" value="GeographicalInformationSystem.ump">Geographical Information System</option>
+                <option name = "optionExample" value="Hospital.ump">Hospital</option>
+                <option name = "optionExample" value="Hotel.ump">Hotel</option>
+                <option name = "optionExample" value="Insurance.ump">Insurance</option>
+                <option name = "optionExample" value="InventoryManagement.ump">Inventory Management</option>
+                <option name = "optionExample" value="Library.ump">Library</option>
+                <option name = "optionExample" value="MailOrderSystemClientOrder.ump">Mail Order System- Client Order</option>
+                <option name = "optionExample" value="ManufacturingPlantController.ump">Manufacturing Plant Controller</option>   
+                <option name = "optionExample" value="Pizza.ump">Pizza System</option>  
+                <option name = "optionExample" value="PoliceSystem.ump">Police System</option>
+                <option name = "optionExample" value="PoliticalEntities.ump">Political Entities</option>
+                <option name = "optionExample" value="realestate.ump">Real Estate</option>
+                <option name = "optionExample" value="RoutesAndLocations.ump">Routes And Locations</option>
+                <option name = "optionExample" value="School.ump">School</option>
+                <option name = "optionExample" value="TelephoneSystem.ump">Telephone System</option>
+                <option name = "optionExample" value="UniversitySystem.ump">University System</option>
+                <option name = "optionExample" value="VendingMachineClassDiagram.ump">Vending Machine</option>
+                <option name = "optionExample" value="WarehouseSystem.ump">Warehouse System</option>
+                <option name="optionExample" class="openUmprOption" value="">Select from Umpr Repository...</option>
+              </select>
+            </li>
+            <li id="itemLoadExamples2">
+              <select id="inputExample2" name="inputExample2" class="button" size="1" data-diagram-type="state">
+                <option name = "optionExample2" id = "defaultExampleOption2" value="">Select Example</option>
+                <option name = "optionExample" value="AgentsCommunication.ump">Agents Communicating *</option>
+                <option name = "optionExample" value="ApplicationProcessing.ump">Application for a Grant</option>
+                <option name = "optionExample" value="Booking.ump">Booking (Airline)</option>
+                <option name = "optionExample" value="CanalLockStateMachine.ump">Canal Lock</option>
+                <option name = "optionExample" value="CarTransmission.ump">Car Transmission</option>
+                <option name = "optionExample" value="CollisionAvoidance.ump">Collision Avoidance With And-Cross Transition</option>
+                <option name = "optionExample" value="CollisionAvoidanceA1.ump">Collision Avoidance - Alternative 1</option>
+                <option name = "optionExample" value="CollisionAvoidanceA2.ump">Collision Avoidance - Alternative 2</option>
+                <option name = "optionExample" value="CollisionAvoidanceA3.ump">Collision Avoidance - Alternative 3</option>
+                <option name = "optionExample" value="ComplexStateMachine.ump">Complex Symbolic *</option>
+                <option name = "optionExample" value="CourseSectionFlat.ump">Course Section</option>
+                <option name = "optionExample" value="CourseSectionNested.ump">Course Section (Nested)</option>
+                <option name = "optionExample" value="DigitalWatchNested.ump">Digital Watch Nested *</option>
+                <option name = "optionExample" value="DigitalWatchFlat.ump">Digital Watch (Flat) *</option>
+                <option name = "optionExample" value="Dishwasher.ump">Dishwasher</option>                
+                <option name = "optionExample" value="Elevator_State_Machine.ump">Elevator</option>
+                <option name = "optionExample" value="GarageDoor.ump">Garage Door</option>
+                <option name = "optionExample" value="HomeHeater.ump">Home Heating System</option>
+                <option name = "optionExample" value="LibraryLoanStateMachine.ump">Library Loan</option>
+                <option name = "optionExample" value="Lights.ump">Light (3 alternatives)</option>
+                <option name = "optionExample" value="MicrowaveOven2.ump">Microwave Oven *</option>
+                <option name = "optionExample" value="Ovens.ump">Oven (3 alternatives)</option>
+                <option name = "optionExample" value="ParliamentBill.ump">Parliament Bill</option>
+                <option name = "optionExample" value="Phone.ump">Phone and Lines</option>
+                <option name = "optionExample" value="Runway.ump">Runway</option>
+                <option name = "optionExample" value="SecurityLight.ump">Security Light</option>
+                <option name = "optionExample" value="SpecificFlight.ump">Specific Flight (Airline)</option>
+                <option name = "optionExample" value="SpecificFlightFlat.ump">Specific Flight (Airline - Flat)</option>
+                <option name = "optionExample" value="TcpIpSimulation.ump">TCP/IP Simulation *</option>
+                <option name = "optionExample" value="TelephoneSystem2.ump">Telephone Set Modes</option>
+                <option name = "optionExample" value="TicTacToe.ump">Tic Tac Toe or Noughts and Crosses</option>
+                <option name = "optionExample" value="TimedCommands.ump">Timed Commands *</option>                     
+                <option name = "optionExample" value="TollBooth.ump">Toll Booth</option>
+                <option name = "optionExample" value="TrafficLightsA.ump">Traffic Lights A</option>
+                <option name = "optionExample" value="TrafficLightsB.ump">Traffic Lights B</option>
+                <option name="optionExample" class="openUmprOption" value="">Select from Umpr Repository...</option>
+              </select>
+            </li>
+
+            <li id="itemLoadExamples3">
+              <select id="inputExample3" name="inputExample3" class="button" size="1" data-diagram-type="composite">
+                <option name = "optionExample3" id = "defaultExampleOption3" value="">Select Example</option>
+                <!-- <option name = "optionExample" value="OBDCarSystem.ump">OBD Car System</option> -->
+                <option name = "optionExample" value="PingPong.ump">Ping Pong</option>
+              </select>
+            </li>
+		  
+  	    <li id="itemLoadExamples4">
+              <select id="inputExample4" name="inputExample4" class="button" size="1" data-diagram-type="feature">
+                <option name = "optionExample4" id = "defaultExampleOption4" value="">Select Example</option>
+                <option name = "optionExample" value="BerkeleyDB_SPL.ump"> BerkeleyDB SPL </option>
+                <option name = "optionExample" value="HelloWorld_SPL.ump"> HelloWorld SPL </option>
+                <option name = "optionExample" value="BerkeleyDB_SP_featureDepend.ump"> Feature Dependencies of BerkeleyDB SPL </option>
+
+              </select>
+            </li>
+          
+            <!-- <li class="dropbox-add-chooser"></li> --> 
+          </ul>
+                
+          <ul id="mainDrawMenu" class="second toggle">
+            <li class="subtitle"> Draw </li>
+            <li id="buttonAddClass" class="toggleToolItem view_opt_class_palette layoutListItem" name="paletteItem" title="Select and click on the canvas to add a new class." tabindex="0">
+              <img src="scripts/class.png"/> 
+              Class
+            </li>
+            <li id="buttonAddAssociation" class="toggleToolItem view_opt_class_palette layoutListItem" name="paletteItem" title="Select and click on a class to draw an association." tabindex="0">
+              <img src="scripts/assoc.png"/> 
+              Association
+            </li>
+            <li id="buttonAddTransition" class="toggleToolItem view_opt_state layoutListItem" name="paletteItem" title="Select and click on a state to draw a transition." tabindex="0">
+               <img src="scripts/assoc.png"/>
+               Transition
+             </li>            
+            <!-- <li id="buttonBendAssociation" class="toggleToolItem" name="paletteItem">
+              <img src="scripts/assocbend.jpg"/> 
+              Bend Assoc.
+            </li> -->
+            <li id="buttonAddGeneralization" class="toggleToolItem view_opt_class_palette layoutListItem" name="paletteItem" title="Select and click on the child class to draw a generalization line to the parent class." tabindex="0">
+              <img src="scripts/generalization.png"/> 
+              Generalization
+            </li>
+            <li id="buttonDeleteEntity" class="toggleToolItem view_opt_class_palette layoutListItem" name="paletteItem" title="Select and click on an element to remove it from your model." tabindex="0">
+              <img src="scripts/delete.png"/>
+               Delete
+             </li>
+            <li id="buttonUndo" name="paletteItem" tabindex="0">
+              <img src="scripts/undo.png"> 
+              Undo
+            </li>
+            <li id="buttonRedo" name="paletteItem" tabindex="0">
+              <img src="scripts/redo.png"> 
+              Redo
+            </li>
+            <li id="buttonReindent" name="paletteItem" tabindex="0">
+              <img src="scripts/sync_diagram.png" /> 
+              Reindent Code
+            </li>
+            <li id="buttonSyncDiagram" name="paletteItem" tabindex="0">
+              <img src="scripts/sync_diagram.png" /> 
+              Sync Diagram 
+            </li>
+        </ul>
+        <ul class="second center-children">
+        <li class="subtitle"> Generate</li>
+        <li id="ttGeneratedCodeType">
+          <select id="inputGenerateCode" name="inputLanguage" class="button">
+            <option id="genjava" value="java:Java">Java Code</option>
+            <option id="genjavadoc" value="javadoc:javadoc">Java API Doc</option>
+            <option id="genphp" value="php:Php">PHP Code</option>
+            <option id="genpython" value="python:Python">Python Code (Beta)</option>
+            <option id="gencpp" value="cpp:RTCpp">C++ Code</option>
+            <option id="genruby" value="ruby:Ruby">Ruby Code</option>
+            <option id="genalloy" value="alloy:Alloy">Alloy Model</option>
+        <option id="gennusmv" value="nusmv:NuSMV">NuSMV Model</option>
+            <option value="xml:Ecore">Ecore</option>
+            <option value="java:TextUml">TextUml</option>
+            <option value="xml:Scxml">Scxml (Experimental)</option>
+            <option value="xml:Papyrus">Papyrus XMI</option>
+            <option value="yumlDiagram:yumlDiagram">Yuml Class Diagram</option>
+            <option value="classDiagram:classDiagram">GraphViz Class Diagram (SVG)</option>
+            <option value="stateDiagram:stateDiagram">State Diagram (GraphViz SVG)</option>
+            <option value="featureDiagram:featureDiagram">Feature Diagram (GraphViz SVG)</option>
+            <option value="entityRelationship:entityRelationshipDiagram">Entity Relationship Diagram (GraphViz SVG)</option>
+            <option id="genstatetables" value="html:StateTables">State Tables</option>
+            <option id="geneventsequence" value="html:EventSequence">Event Sequence</option>
+            <option value="structureDiagram:StructureDiagram">Structure Diagram</option>
+            <option id="genuigu2" value="Uigu2:Uigu2">CRUD User Interface</option>            
+            <option value="java:Json">Json</option>
+            <option id="gensql" value="sql:Sql">Sql</option>
+            <option id="genmetrics" value="html:SimpleMetrics">Simple Metrics</option>
+            <option value="html:CodeAnalysis">Code Analysis</option>
+            <option value="java:USE">USE Model</option>
+            <option value="java:UmpleSelf">Internal Umple Representation</option>
+            <option id="genUmpleAnnotaiveToComposition" value="java:UmpleAnnotaiveToComposition" >Compositional Mixsets from Inline Mixsets </option>
+
+          </select>
+        </li>
+        <li id="ttGenerateCode">
+          <div id="buttonGenerateCode" class="jQuery-palette-button" tabindex="0" value="Generate It"></div>
+        </li>
+        <li id="ttExecuteCode">
+          <div id="buttonExecuteCode" class="jQuery-palette-button" tabindex="1" value="Execute It"></div>
+        </li>
+        <li><div id="genstatus" align="center">Done. See below</div><li>
+      </ul>      </div>
+      
+      <!-- GROUP 3 OF OPTIONS -->
+      <h3><a href="#options">OPTIONS</a></h3>
+      
+      <div class="section">
+        <div id="buttonViewComplete" title="View Complete">Selected view has opened in a new window.</div>
+         <!-- DIAGRAM TYPE OPTIONS -->
+          <ul class="first toggle">
+            <li class="subtitle">  Diagram Type </li>
+              
+            <li id="ttShowEditableClassDiagram"> 
+              <input id="buttonShowEditableClassDiagram" class="radio" type="radio" name="buttonCanvasType" value="buttonCanvasTypeEditableClassDiagram"/> 
+              <a id="labelShowEditableClassDiagram" class="buttonExtend">Editable Class</a> 
+            </li>
+            <li id="ttShowJointJSClassDiagram"> 
+              <input id="buttonShowJointJSClassDiagram" class="radio" type="radio"  name="buttonCanvasType" value="buttonCanvasTypeJointJSClassDiagram"/> 
+              <a id="labelShowJointJSClassDiagram" class="buttonExtend">JointJS Class</a> 
+            </li>
+            <li id="ttShowGvClassDiagram"> 
+              <input id="buttonShowGvClassDiagram" class="radio" type="radio"  name="buttonCanvasType" value="buttonCanvasTypeGvClassDiagram"/> 
+              <a id="labelShowGvClassDiagram" class="buttonExtend">GraphViz Class</a> 
+            </li>
+            <li id="ttShowGvStateDiagram"> 
+              <input id="buttonShowGvStateDiagram" class="radio" type="radio"  name="buttonCanvasType" value="buttonCanvasTypeGVStateDiagram"/> 
+              <a id="labelShowGvStateDiagram" class="buttonExtend">GraphViz State</a> 
+            </li>
+	    <li id="ttShowGvFeatureDiagram"> 
+              <input id="buttonShowGvFeatureDiagram" class="radio" type="radio"  name="buttonCanvasType" value="buttonCanvasTypeGVFeatureDiagram"/> 
+              <a id="labelShowGvFeatureDiagram" class="buttonExtend">GraphViz Feature</a> 
+            </li>
+            <li id="ttShowStructureDiagram"> 
+              <input id="buttonShowStructureDiagram" class="radio" type="radio" name="buttonCanvasType" value="buttonCanvasTypeStructureDiagram"/> 
+              <a id="labelShowStructureDiagram" class="buttonExtend">Composite Structure</a> 
+            </li>
+          </ul>
+          <!-- SHOW VIEW OPTIONS -->
+          <ul class="second">
+          <li id="ShowViewTitle" class="subtitle"> Show View </li>
+          <li id="ttShowHideCanvas"> 
+              <input id="buttonShowHideCanvas" class="checkbox" type="checkbox" name="buttonShowHideCanvas" value="buttonShowHideCanvas"/> 
+              <a id="labelShowHideCanvas" class="buttonExtend">Diagram (Canvas)</a>
+            </li>
+            <li id="ttShowHideTextEditor"> 
+              <input id="buttonShowHideTextEditor" class="checkbox" type="checkbox" name="buttonShowHideTextEditor" value="buttonShowHideTextEditor"/> 
+              <a id="labelShowHideTextEditor" class="buttonExtend">Text Editor</a>
+            </li>
+            <li id="ttShowHideLayoutEditor" class="layoutListItem view_opt_class"> 
+              <input id="buttonShowHideLayoutEditor" class="checkbox" type="checkbox" name="buttonShowHideLayoutEditor" value="buttonShowHideLayoutEditor"/> 
+              <a id="labelShowHideLayoutEditor" class="buttonExtend">Layout Editor</a> 
+            </li>          
+            <li id="ttToggleAttributes" class="layoutListItem view_opt_class"> 
+              <input id="buttonToggleAttributes" class="checkbox" type="checkbox"/> 
+              <a id="labelToggleAttributes" class="buttonExtend">Attributes</a>
+            </li>
+            <li id="ttToggleMethods" class="layoutListItem view_opt_class"> 
+              <input id="buttonToggleMethods" class="checkbox" type="checkbox"/> 
+              <a id="labelToggleMethods" class="buttonExtend">Methods</a>
+            </li>
+            <li id="ttToggleActions" class="layoutListItem view_opt_state"> 
+              <input id="buttonToggleActions" class="checkbox" type="checkbox"/> 
+              <a id="labelToggleActions" class="buttonExtend">Actions</a> 
+            </li>
+            <li id="ttToggleTraits" class="layoutListItem view_opt_class"> 
+              <input id="buttonToggleTraits" class="checkbox" type="checkbox"/> 
+              <a id="labelToggleTraits" class="buttonExtend">Traits</a> 
+            </li>
+            <li id="ttToggleTransitionLabels" class="layoutListItem view_opt_state"> 
+              <input id="buttonToggleTransitionLabels" class="checkbox" type="checkbox"/> 
+              <a id="labelToggleTransitionLabels" class="buttonExtend">Transition Labels</a> 
+            </li>
+            <li id="ttToggleGuards" class="layoutListItem view_opt_state"> 
+              <input id="buttonToggleGuards" class="checkbox" type="checkbox"/> 
+              <a id="labelToggleGuards" class="buttonExtend">Guards</a> 
+            </li>            
+            <li id="ttToggleGuardLabels" class="layoutListItem view_opt_state"> 
+              <input id="buttonToggleGuardLabels" class="checkbox" type="checkbox"/> 
+              <a id="labelToggleGuardLabels" class="buttonExtend">Guard Labels</a> 
+            </li>
+            <li id="ttToggleFeatureDependencyLabels" class="layoutListItem view_opt_feature"> 
+              <input id="buttonToggleFeatureDependency" class="checkbox" type="checkbox"/> 
+              <a id="labelToggleFeatureDependencyLabels" class="buttonExtend">Feature Dependency</a> 
+            </li>
+
+            
+          </ul>
+          <!-- PREFERENCES OPTIONS -->
+          <ul class="second">
+            <li id="preferencesTitle" class="subtitle"> Preferences </li>
+            <li id="ttPhotoReady" class="layoutListItem view_opt_class"> 
+              <input id="buttonPhotoReady" class="checkbox" type="checkbox" name="photoReady" value="photoReady"/> 
+              <a id="labelPhotoReady" class="buttonExtend">Photo Ready</a> 
+            </li>
+            <li id="ttManualSync">
+              <input id="buttonManualSync" class="checkbox" type="checkbox" name="manualSync" value="manualSync"/> 
+              <a id="labelManualSync" class="buttonExtend">Manual Sync</a>              
+            </li>
+            <li id="ttAllowPinch">
+              <input id="buttonAllowPinch" class="checkbox" type="checkbox" name="allowPinch" value="allowPinch"/> 
+              <a id="labelAllowPinch" class="buttonExtend">Pinch to Zoom</a>               
+            </li> 
+          </ul>
+         </div>
+
+
+      <!-- GROUP 4 OF OPTIONS -->
+      <h3><a href="#options">TASKS</a></h3>
+
+      <div class="section">
+          <ul id="taskSubmenu">
+            
+                          <li id="buttonCreateTask">
+                <img src="scripts/copy.png"/>
+                Create a Task
+              </li>
+            
+            <li id="buttonLoadTask">
+              <img src="scripts/copy.png"/>
+              Load a Task
+            </li>
+
+                        
+
+            <div id="loadTaskNameArea" style="display: none;">
+              <label id="labelLoadTaskName" for="inputLoadTaskName">Task name:</label><br>
+              <input type="text" id="inputLoadTaskName"><br>
+              
+              <span id="buttonSubmitLoadTask">
+              <a href="javascript:Action.submitLoadTask()">Load Task</a> </span>
+            </div>
+          </ul>
+
+
+      </div>
+
+      </div> 
+    </div>
+   
+    <div id="umpleCanvasColumn" class="umpleCanvasColumn inRow">
+      <div id="umpleCanvas"  tabIndex="1" class="surface"></div>
+    </div>
+  </div>
+ <a name="genArea"/>  
+  <div id="generatedCodeRow" class="row">
+		<li id="ttTabsCheckbox">
+			<input id="buttonTabsCheckbox" type="checkbox" class="checkbox" name="buttonTabsCheckbox" value="buttonTabsCheckbox"/>
+			<a id="labelTabsCheckbox" class="buttonExtend">Show Files in Separate Tabs</a>
+		</li>
+    <div id="messageArea"></div>
+    <div id ="downloadArea"></div>
+    <div id="tabRow"></div>
+    <div id="innerGeneratedCodeRow"></div>
+  </div>
+  <div id="codeExecutionArea">
+    <pre id="executionMessage"></pre>
+  </div>
+
+      <div class="spacer row"></div>
+  
+  <script src="scripts/pinch.js" type="text/javascript"></script>
+
+  <script>
+    Page.init(
+       true  ,
+       true  ,
+       true  ,
+       false ,
+       false ,
+      "class",
+      "#genclass",
+       false ,
+       false ,
+       true       ); 
+       
+      //
+  </script>
+      <div class="visitors-count" align="right">
+        1.56 million visits since October 2018 | 10.37 million commands run since July 2019 | <a target="releasepage" href="https://github.com/umple/umple/releases/v1.32.1
+">v1.32.1.6535.5b8dcb1ff 3 weeks ago
+</a>    </div>
+  </body>
+</html>
